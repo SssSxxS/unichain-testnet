@@ -18,10 +18,9 @@ export const mintEuropa = async () => {
 
       const tx = await claimNFT(wallet.private_key, "0x2188DA4AE1CAaFCf2fBFb3ef34227F3FFdc46AB6")
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
+      await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
     } catch (err) {
       logger.error(err)
     }
-
-    await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
   }
 }

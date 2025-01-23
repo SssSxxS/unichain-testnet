@@ -18,10 +18,9 @@ export const deployErc721 = async () => {
 
       const tx = await deployERC721Token(wallet.private_key)
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
+      await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
     } catch (err) {
       logger.error(err)
     }
-
-    await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
   }
 }

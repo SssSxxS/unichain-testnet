@@ -18,10 +18,9 @@ export const mintOrochimaru = async () => {
 
       const tx = await claimNFT(wallet.private_key, "0x87787cAacb6b928eb122D761eF1424217552Ac5F")
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
+      await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
     } catch (err) {
       logger.error(err)
     }
-
-    await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
   }
 }

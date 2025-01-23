@@ -22,10 +22,9 @@ export const bridgeBrid = async () => {
       }
       const tx = await callBridgeEthTo(wallet.private_key, amountInEth, extraData)
       logger.info(`https://sepolia.etherscan.io/tx/${tx.hash} (${wallet.address}, ${amountInEth})`)
+      await sleepInRange(SLEEP_BRIDGE[0], SLEEP_BRIDGE[1])
     } catch (err) {
       logger.error(err)
     }
-
-    await sleepInRange(SLEEP_BRIDGE[0], SLEEP_BRIDGE[1])
   }
 }
