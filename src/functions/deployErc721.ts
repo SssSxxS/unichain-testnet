@@ -10,12 +10,12 @@ export const deployErc721 = async () => {
   await db.close()
 
   for (const wallet of wallets) {
-    if (Number(wallet.balance_unichain_sepolia) == 0) {
-      logger.warn(`Zero balance (${wallet.address})`)
-      continue
-    }
-
     try {
+      if (Number(wallet.balance_unichain_sepolia) == 0) {
+        logger.warn(`Zero balance (${wallet.address})`)
+        continue
+      }
+
       const tx = await deployERC721Token(wallet.private_key)
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
     } catch (err) {

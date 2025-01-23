@@ -10,12 +10,12 @@ export const mintUnicorn = async () => {
   await db.close()
 
   for (const wallet of wallets) {
-    if (Number(wallet.balance_unichain_sepolia) == 0) {
-      logger.warn(`Zero balance (${wallet.address})`)
-      continue
-    }
-
     try {
+      if (Number(wallet.balance_unichain_sepolia) == 0) {
+        logger.warn(`Zero balance (${wallet.address})`)
+        continue
+      }
+
       const tx = await claimNFT(wallet.private_key, "0x99F4146B950Ec5B8C6Bc1Aa6f6C9b14b6ADc6256")
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
     } catch (err) {

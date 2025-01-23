@@ -10,12 +10,12 @@ export const mintOrochimaru = async () => {
   await db.close()
 
   for (const wallet of wallets) {
-    if (Number(wallet.balance_unichain_sepolia) == 0) {
-      logger.warn(`Zero balance (${wallet.address})`)
-      continue
-    }
-
     try {
+      if (Number(wallet.balance_unichain_sepolia) == 0) {
+        logger.warn(`Zero balance (${wallet.address})`)
+        continue
+      }
+
       const tx = await claimNFT(wallet.private_key, "0x87787cAacb6b928eb122D761eF1424217552Ac5F")
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
     } catch (err) {

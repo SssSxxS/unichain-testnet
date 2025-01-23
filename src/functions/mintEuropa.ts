@@ -10,12 +10,12 @@ export const mintEuropa = async () => {
   await db.close()
 
   for (const wallet of wallets) {
-    if (Number(wallet.balance_unichain_sepolia) == 0) {
-      logger.warn(`Zero balance (${wallet.address})`)
-      continue
-    }
-
     try {
+      if (Number(wallet.balance_unichain_sepolia) == 0) {
+        logger.warn(`Zero balance (${wallet.address})`)
+        continue
+      }
+
       const tx = await claimNFT(wallet.private_key, "0x2188DA4AE1CAaFCf2fBFb3ef34227F3FFdc46AB6")
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
     } catch (err) {
