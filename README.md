@@ -34,5 +34,6 @@ https://t.me/yofomo
 
 ## Notes
 
+- For `UPDATE.bat`, you must have [Git](https://git-scm.com/downloads) installed and the repository must be cloned
 - To view the SQLite database file, you can use tools like [DB Browser for SQLite](https://sqlitebrowser.org/)
 - If the wallet has previously minted nft, the software will just send a transaction that will fail
