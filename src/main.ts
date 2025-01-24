@@ -11,6 +11,9 @@ import { deployErc721 } from "./functions/deployErc721"
 import { mintUnicorn } from "./functions/mintUnicorn"
 import { mintEuropa } from "./functions/mintEuropa"
 import { mintOrochimaru } from "./functions/mintOrochimaru"
+import { randomBridge } from "./functions/randomBridge"
+import { randomMint } from "./functions/randomMint"
+import { getFeeData } from "./functions/getFeeData"
 
 export const main = async () => {
   try {
@@ -19,6 +22,34 @@ export const main = async () => {
       const choice = await select({
         message: "MENU:",
         choices: [
+          {
+            name: "Get Base Fee",
+            short: chalk.bold("Get Base Fee"),
+            value: "getFeeData",
+          },
+          new Separator(" "),
+          {
+            name: "Recreate database",
+            short: chalk.bold("Recreate database"),
+            value: "recreateDatabase",
+          },
+          {
+            name: "Update balances values",
+            short: chalk.bold("Update balances values"),
+            value: "updateBalances",
+          },
+          new Separator(" "),
+          {
+            name: "Random Bridge Sepolia to Unichain",
+            short: chalk.bold("Random Bridge Sepolia to Unichain"),
+            value: "randomBridge",
+          },
+          {
+            name: "Random Mint NFTs (all in a different order)",
+            short: chalk.bold("Random Mint NFTs"),
+            value: "randomMint",
+          },
+          new Separator(" "),
           {
             name: "Bridge Sepolia to Unichain | https://superbridge.app/",
             short: chalk.bold("Bridge Sepolia to Unichain | https://superbridge.app/"),
@@ -29,6 +60,7 @@ export const main = async () => {
             short: chalk.bold("Bridge Sepolia to Unichain | https://www.brid.gg/"),
             value: "bridgeBrid",
           },
+          new Separator(" "),
           {
             name: "Mint Unicorn NFT | https://morkie.xyz/unicorn",
             short: chalk.bold("Mint Unicorn NFT | https://morkie.xyz/unicorn"),
@@ -44,6 +76,7 @@ export const main = async () => {
             short: chalk.bold("Mint Orochimaru NFT | https://www.nerzo.xyz/orochimaru"),
             value: "mintOrochimaru",
           },
+          new Separator(" "),
           {
             name: "Deploy ERC-20 Token",
             short: chalk.bold("Deploy ERC-20 Token"),
@@ -57,17 +90,6 @@ export const main = async () => {
           },
           new Separator(" "),
           {
-            name: "Recreate database",
-            short: chalk.bold("Recreate database"),
-            value: "recreateDatabase",
-          },
-          {
-            name: "Update balances values",
-            short: chalk.bold("Update balances values"),
-            value: "updateBalances",
-          },
-          new Separator(" "),
-          {
             name: "Exit",
             short: chalk.bold("Exit"),
             value: "null",
@@ -78,12 +100,31 @@ export const main = async () => {
       })
 
       switch (choice) {
+        case "getFeeData":
+          await getFeeData()
+          break
+
+        case "recreateDatabase":
+          await recreateDatabase()
+          break
+        case "updateBalances":
+          await updateBalances()
+          break
+
+        case "randomBridge":
+          await randomBridge()
+          break
+        case "randomMint":
+          await randomMint()
+          break
+
         case "bridgeSuper":
           await bridgeSuper()
           break
         case "bridgeBrid":
           await bridgeBrid()
           break
+
         case "mintUnicorn":
           await mintUnicorn()
           break
@@ -93,18 +134,12 @@ export const main = async () => {
         case "mintOrochimaru":
           await mintOrochimaru()
           break
+
         case "deployErc20":
           await deployErc20()
           break
         case "deployErc721":
           await deployErc721()
-          break
-
-        case "recreateDatabase":
-          await recreateDatabase()
-          break
-        case "updateBalances":
-          await updateBalances()
           break
 
         default:

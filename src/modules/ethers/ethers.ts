@@ -6,6 +6,13 @@ import { getRandomName } from "./names"
 import { getRandomSymbol } from "./symbols"
 import { getRandomNumFloor } from "../../utils/basic"
 
+export const getBaseFee = async (rpcUrl: string) => {
+  const provider = new ethers.JsonRpcProvider(rpcUrl)
+  const fee = await provider.getFeeData()
+  const feeGwei = ethers.formatUnits(fee.gasPrice ? fee.gasPrice : 0, "gwei")
+  return feeGwei
+}
+
 export const getAddressFromPrivateKey = (privateKey: string) => {
   const wallet = new ethers.Wallet(privateKey)
   return wallet.address
