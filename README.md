@@ -1,7 +1,7 @@
 # Unichain-Testnet
 
 https://t.me/yofomo
-![Alt text](https://i.imgur.com/45u2TGG.png)
+![Alt text](https://i.imgur.com/FrznMVb.png)
 
 ## Requirements
 
@@ -15,7 +15,7 @@ https://t.me/yofomo
 
 - **private_keys.txt**: `data/private_keys.txt` | 1 line = 1 wallet
 - **config.ts**: `data/config.ts`
-  ![Alt text](https://i.imgur.com/yxPdToP.png)
+  ![Alt text](https://i.imgur.com/f2ZasqF.png)
 
 ## Usage
 
@@ -34,5 +34,6 @@ https://t.me/yofomo
 
 ## Notes
 
+- For `UPDATE.bat`, you must have [Git](https://git-scm.com/downloads) installed and the repository must be cloned
 - To view the SQLite database file, you can use tools like [DB Browser for SQLite](https://sqlitebrowser.org/)
 - If the wallet has previously minted nft, the software will just send a transaction that will fail
