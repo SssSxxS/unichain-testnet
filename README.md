@@ -1,7 +1,7 @@
 # Unichain-Testnet
 
 https://t.me/yofomo
-![Alt text](https://i.imgur.com/45u2TGG.png)
+![Alt text](https://i.imgur.com/FrznMVb.png)
 
 ## Requirements
 
@@ -15,7 +15,7 @@ https://t.me/yofomo
 
 - **private_keys.txt**: `data/private_keys.txt` | 1 line = 1 wallet
 - **config.ts**: `data/config.ts`
-  ![Alt text](https://i.imgur.com/yxPdToP.png)
+  ![Alt text](https://i.imgur.com/f2ZasqF.png)
 
 ## Usage
 
