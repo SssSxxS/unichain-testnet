@@ -16,15 +16,15 @@ export const randomMint = async () => {
         continue
       }
 
-      const mintArray = [
-        claimNFT(wallet.private_key, "0x99F4146B950Ec5B8C6Bc1Aa6f6C9b14b6ADc6256"), // Unicorn
-        claimNFT(wallet.private_key, "0x2188DA4AE1CAaFCf2fBFb3ef34227F3FFdc46AB6"), // Europa
-        claimNFT(wallet.private_key, "0x87787cAacb6b928eb122D761eF1424217552Ac5F"), // Orochimaru
+      const contracts = [
+        "0x99F4146B950Ec5B8C6Bc1Aa6f6C9b14b6ADc6256", // Unicorn
+        "0x2188DA4AE1CAaFCf2fBFb3ef34227F3FFdc46AB6", // Europa
+        "0x87787cAacb6b928eb122D761eF1424217552Ac5F", // Orochimaru
       ]
-      const shuffledMintArray = shuffleArray(mintArray)
+      const shuffledContracts = shuffleArray(contracts)
 
-      for (const fn of shuffledMintArray) {
-        const tx = await fn
+      for (const contract of shuffledContracts) {
+        const tx = await claimNFT(wallet.private_key, contract)
         logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
         await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
       }

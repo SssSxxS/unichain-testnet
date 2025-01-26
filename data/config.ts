@@ -7,3 +7,5 @@ export const BRIDGE_AMOUNT_RANGE = [0.001, 0.01] // [min, max] amount in ETH to 
 export const SLEEP_BRIDGE = [100, 300] // [min, max] delay between bridge calls in seconds
 
 export const SLEEP_MINT = [100, 300] // [min, max] delay between mint calls in seconds
+
+export const SLEEP_DEPLOY = [100, 300] // [min, max] delay between deploys in seconds

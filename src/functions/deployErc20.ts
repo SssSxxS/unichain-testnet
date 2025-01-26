@@ -1,4 +1,4 @@
-import { SLEEP_MINT } from "../../data/config"
+import { SLEEP_DEPLOY } from "../../data/config"
 import DatabaseConnection from "../modules/db"
 import { deployERC20Token } from "../modules/ethers/ethers"
 import { sleepInRange } from "../utils/basic"
@@ -18,7 +18,7 @@ export const deployErc20 = async () => {
 
       const tx = await deployERC20Token(wallet.private_key)
       logger.info(`https://sepolia.uniscan.xyz/tx/${tx?.hash} (${wallet.address})`)
-      await sleepInRange(SLEEP_MINT[0], SLEEP_MINT[1])
+      await sleepInRange(SLEEP_DEPLOY[0], SLEEP_DEPLOY[1])
     } catch (err) {
       logger.error(err)
     }
