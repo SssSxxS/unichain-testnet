@@ -86,7 +86,6 @@ export const main = async () => {
             name: "Deploy ERC-721 Token",
             short: chalk.bold("Deploy ERC-721 Token"),
             value: "deployErc721",
-            disabled: true,
           },
           new Separator(" "),
           {
