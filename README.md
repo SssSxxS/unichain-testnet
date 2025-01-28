@@ -1,6 +1,8 @@
 # Unichain-Testnet
 
-https://t.me/yofomo
+[![My GitHub](https://img.shields.io/badge/@yofomo-YouTube-red)](https://www.youtube.com/watch?v=VFrI-5VOB6M)
+[![My GitHub](https://img.shields.io/badge/@yofomo-Telegram-blue)](https://t.me/yofomo)
+
 ![Alt text](https://i.imgur.com/FrznMVb.png)
 
 ## Requirements
