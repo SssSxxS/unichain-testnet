@@ -3,7 +3,7 @@
 [![My GitHub](https://img.shields.io/badge/@yofomo-YouTube-red)](https://www.youtube.com/watch?v=VFrI-5VOB6M)
 [![My GitHub](https://img.shields.io/badge/@yofomo-Telegram-blue)](https://t.me/yofomo)
 
-![Alt text](https://i.imgur.com/FrznMVb.png)
+![Alt text](https://i.imgur.com/cCfoSS3.png)
 
 ## Requirements
 
@@ -17,7 +17,7 @@
 
 - **private_keys.txt**: `data/private_keys.txt` | 1 line = 1 wallet
 - **config.ts**: `data/config.ts`
-  ![Alt text](https://i.imgur.com/f2ZasqF.png)
+  ![Alt text](https://i.imgur.com/PwEc5Op.png)
 
 ## Usage
 
