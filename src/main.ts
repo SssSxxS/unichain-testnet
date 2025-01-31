@@ -14,6 +14,7 @@ import { mintOrochimaru } from "./functions/mintOrochimaru"
 import { randomBridge } from "./functions/randomBridge"
 import { randomMint } from "./functions/randomMint"
 import { getFeeData } from "./functions/getFeeData"
+import { mintAlien } from "./functions/mintAlien"
 
 export const main = async () => {
   try {
@@ -76,6 +77,11 @@ export const main = async () => {
             short: chalk.bold("Mint Orochimaru NFT | https://www.nerzo.xyz/orochimaru"),
             value: "mintOrochimaru",
           },
+          {
+            name: "Mint Alien NFT | https://morkie.xyz/alien",
+            short: chalk.bold("Mint Alien NFT | https://morkie.xyz/alien"),
+            value: "mintAlien",
+          },
           new Separator(" "),
           {
             name: "Deploy ERC-20 Token",
@@ -132,6 +138,9 @@ export const main = async () => {
           break
         case "mintOrochimaru":
           await mintOrochimaru()
+          break
+        case "mintAlien":
+          await mintAlien()
           break
 
         case "deployErc20":

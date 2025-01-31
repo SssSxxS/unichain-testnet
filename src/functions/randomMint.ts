@@ -20,6 +20,7 @@ export const randomMint = async () => {
         "0x99F4146B950Ec5B8C6Bc1Aa6f6C9b14b6ADc6256", // Unicorn
         "0x2188DA4AE1CAaFCf2fBFb3ef34227F3FFdc46AB6", // Europa
         "0x87787cAacb6b928eb122D761eF1424217552Ac5F", // Orochimaru
+        "0xAdE5aE3e71ff1E6D1E1e849d18A4DF27189a61be", // Alien
       ]
       const shuffledContracts = shuffleArray(contracts)
 
