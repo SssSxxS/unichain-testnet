@@ -16,6 +16,7 @@ import { randomMint } from "./functions/randomMint"
 import { getFeeData } from "./functions/getFeeData"
 import { mintAlien } from "./functions/mintAlien"
 import { mintUnicorn2 } from "./functions/mintUnicorn2"
+import { mintUniknight } from "./functions/mintUniknight"
 
 export const main = async () => {
   try {
@@ -88,6 +89,11 @@ export const main = async () => {
             short: chalk.bold("Mint Unicorn2 NFT | https://morkie.xyz/unicorn2"),
             value: "mintUnicorn2",
           },
+          {
+            name: "Mint Uniknight NFT | https://www.nerzo.xyz/uniknight",
+            short: chalk.bold("Mint Uniknight NFT | https://www.nerzo.xyz/uniknight"),
+            value: "mintUniknight",
+          },
           new Separator(" "),
           {
             name: "Deploy ERC-20 Token",
@@ -150,6 +156,9 @@ export const main = async () => {
           break
         case "mintUnicorn2":
           await mintUnicorn2()
+          break
+        case "mintUniknight":
+          await mintUniknight()
           break
 
         case "deployErc20":
